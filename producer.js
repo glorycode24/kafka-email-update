@@ -1,5 +1,5 @@
 const { Kafka } = require('kafkajs');
-const crypto = require('crypto'); // Built-in for generating tokens
+const crypto = require('crypto');
 
 const kafka = new Kafka({ clientId: 'identity-app', brokers: ['localhost:9092'] });
 const producer = kafka.producer();
@@ -10,7 +10,7 @@ const startEmailChange = async () => {
   const event = {
     user_id: 'user_12345',
     new_email: 'new-email@gmail.com',
-    status: 'PENDING', // Domain status
+    status: 'PENDING',
     token: crypto.randomBytes(16).toString('hex'), 
     timestamp: new Date().toISOString()
   };

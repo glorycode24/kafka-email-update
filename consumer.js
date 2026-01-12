@@ -13,7 +13,6 @@ const startConsumer = async () => {
 
   await consumer.run({
     eachMessage: async ({ message }) => {
-      // Safely parse the JSON to avoid "Poison Message" crashes
       try {
         const data = JSON.parse(message.value.toString());
 
@@ -33,5 +32,4 @@ const startConsumer = async () => {
   });
 };
 
-// Start the process and catch errors
 startConsumer().catch(e => console.error(`[consumer] ${e.message}`, e));

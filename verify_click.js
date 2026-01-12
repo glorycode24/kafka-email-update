@@ -7,7 +7,7 @@ const confirmEmail = async () => {
   
   const event = {
     user_id: 'user_12345',
-    status: 'VERIFIED', // Moving to the next state
+    status: 'VERIFIED', 
     timestamp: new Date().toISOString()
   };
 
